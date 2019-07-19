@@ -1,18 +1,31 @@
-.button(@border, @background){ 
+@border: 1px solid dodgerblue;
 
-border-radius: @border;
+@backgroundBlue: dodgerblue;
 
-background-color: @background;
-
-
-
+.button{ 
+    background-color: @backgroundBlue;
+    border: @border;
 }
+
+@keyframes example {
+    from {background-color: pink;}
+    to {background-color: black;}
+  }
+
+.animation(@keyframes){
+    animation-name: example;
+    animation-duration: 7s;
+}
+
+
 
 .btn{
     padding: 10px 40px;
-    border: 1px solid dodgerblue;
+    .button(); 
+    .animation(pink, 5s);
+    // animation-name: example;
+    // animation-duration: 7s;
     border-radius: 10px;
-    background-color: dodgerblue;
     color: white;
     cursor: pointer;
     font-size: 1rem;
